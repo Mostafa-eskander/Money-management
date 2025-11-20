@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ادارة الفلوس</title>
+        <link rel="stylesheet" href="./css/all.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <!-- header -->
+        <header>
+            <h2>اسم الشركة</h2>
+            <h4>اسم العميل</h4>
+        </header>
+
+        <!-- dialog -->
+        <div class="root">
+            <dialog id="mydialog">
+                <i class="fa-solid fa-xmark" onclick="closeDialog()"></i>
+                <h3>حذف جميع العناصر ؟</h3>
+                <div class="all_btn">
+                    <button onclick="closeDialog()" id="btn" class="btn-no">لا</button>
+                    <button onclick="clearAllData()" id="btn" class="btn-yes">نعم</button>
+                </div>
+            </dialog>
+        </div>
+        <!-- main section -->
+        <section class="main-section">
+            <div class="container">
+                <div class="top">
+                    <form id="myForm">
+                        <p class="form-select">
+                            <label for="treatment">نوع المعاملة</label>
+                            <select name="treatment" id="treatment">
+                                <option value="نوع المعاملة" selected>نوع المعاملة</option>
+                                <option value="اخذ">اخذ</option>
+                                <option value="صرف">صرف</option>
+                            </select>
+                        </p>
+                        <p>
+                            <input type="number" placeholder="المبلغ" id="amount-of-money">
+                        </p>
+                        <p class="p-date">
+                            <label for="date">ادخل التاريخ :</label>
+                            <input type="date" id="date" name="date">
+                        </p>
+                        <p>
+                            <textarea id="textarea" placeholder="اكتب فيما انفق المال"></textarea>
+                        </p>
+                        <p>
+                            <button id="btn" class="btnSub">اضافة</button>
+                        </p>
+                    </form>
+                </div>
+                <div class="center">
+                    <button onclick="deleteAll()" id="delete_all">حذف الجميع ( 10 )</button>
+                </div>
+                <div class="end">
+                    <table>
+                        <tr>
+                            <th>نوع المعاملة</th>
+                            <th>سبب الصرف او الاخذ</th>
+                            <th>المبلغ</th>
+                            <th>التاريخ</th>
+                            <th>تعديل</th>
+                            <th>حذف</th>
+                        </tr>
+                        <tbody id="tbody">
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- Input verification -->
+        <section class="input-verification">
+            <div class="content">
+                <i class="fa-solid fa-xmark close-error" onclick="close_error_message()"></i>
+                <h3>رسالة تحذير <i class="fa-solid fa-triangle-exclamation"></i></h3>
+                <div class="error-message">
+                    <p>اختر نوع المعامله</p>
+                    <p>اكتب المبلغ</p>
+                    <p>اكتب التاريخ</p>
+                    <p>اكتب فيما صرف المال</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- total section -->
+        <section class="total">
+            <div class="container">
+                <span>
+                    <button id="btn" onclick="btn_took()">اجمالي الاخذ</button>
+                    <h3 class="took">0</h3>
+                </span>
+                <span>
+                    <button id="btn" onclick="btn_exchange()">اجمالي الصروفات</button>
+                    <h3 class="exchange">0</h3>
+                </span>
+                <span>
+                    <button id="btn" class="btn-total">اجمالي الاخذ و الصروفات</button>
+                    <h3 class="total-money">0</h3>
+                </span>
+            </div>
+        </section>
+
+        <!-- excel sheet -->
+        <footer>
+            <button id="btn" class="exportExcelBtn"> تحميل ملف اكسل <i class="fa-solid fa-download"></i></button>
+        </footer>
+        <!-- js file -->
+        <script src="./js/all.min.js"></script>
+        <script src="./js/main.js"></script>
+        <!-- مكتبة Excel (SheetJS) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    </body>
+</html>

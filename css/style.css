@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --main-color: #313647;
+    --font-color: #FFF8D4;
+    --dark-color: #435663;
+    --border-color: #A3B087;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: "Cairo", sans-serif;
+    background-color: var(--main-color);
+    direction: rtl;
+    color: var(--font-color);
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width: 786px) {
+    .container {
+        width: 750px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+#btn {
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    color: var(--font-color);
+    font-size: 16px;
+    font-family: "Cairo", sans-serif;
+    transition: 0.3s;   
+}
+
+/* header */
+header h2 {
+    width: fit-content;
+    margin: 20px auto 0;
+}
+header h4 {
+    width: fit-content;
+    margin: 10px auto 40px;
+}
+
+/* dialog */
+.root {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #0000005d;
+}
+.root dialog {
+    padding: 20px;
+    margin: 200px auto;
+    max-width: 400px;
+    border: none;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: transform 0.5s,opacity 0.5s;
+}
+.root dialog[open] {
+    opacity: 1;
+    transform: translateY(0);
+}
+.root dialog svg {
+    cursor: pointer;
+}
+.root dialog .all_btn {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.root dialog button {
+    padding: 1px 20px;
+}
+.root dialog .btn-yes {
+    background-color: rgb(211, 64, 64);
+}
+.root dialog .btn-yes:hover {
+    background-color: red;
+}
+.root dialog .btn-no {
+    background-color: var(--border-color);
+}
+.root dialog .btn-no:hover {
+    background-color: #5f703b;
+}
+/* main section */
+/* top */
+section .container .top form p select {
+    background-color: var(--dark-color);
+    color: var(--font-color);
+    font-family: "Cairo", sans-serif;
+    padding: 5px 10px;
+    outline: none;
+    border-radius: 4px;
+}
+section .container .top form .form-select {
+    width: fit-content;
+    margin: 0 auto;
+} 
+section .container .top form p input[type='number'] {
+    outline: none;
+    border: none;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+section .container .top form p input[type='date'] {
+    outline: none;
+    border: none;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+}
+section .container .top form p textarea {
+    margin: 10px 0;
+    min-width: 50%;
+    max-width: 100%;
+    width: 100%;
+    max-height: 200px;
+    padding: 10px;
+    font-size: 16px;
+}
+section .container .top form p button {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--dark-color);
+}
+section .container .top form p button:hover {
+    background-color: #20282e;
+}
+/* center */
+section .container .center button {
+    width: 100%;
+    padding: 5px 0;
+    background-color: #5f703b;
+    color: var(--font-color);
+    font-family: "Cairo", sans-serif;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: none;
+}
+section .container .center button:hover {
+    background-color: var(--border-color);
+}
+/* end */
+section .container .end {
+    width: 100%;
+    max-height: 700px;
+    overflow-X: auto;
+    margin: 20px 0;
+}
+section .container .end .table {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    border-collapse: collapse;
+    min-width: 600px;
+    table-layout: fixed;
+}
+section .container .end th,
+section .container .end td {
+    width: 1%;
+    border: 1px solid var(--font-color);
+    padding: 10px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+section .container .end th {
+    background-color: var(--font-color);
+    color: var(--dark-color);
+}
+section .container .end td button {
+    width: 90%;
+    padding: 4px 20px;
+    background-color: var(--dark-color);
+}
+section .container .end td button:hover {
+    background-color: #20282e;
+}
+
+/* Input-verification */
+.input-verification {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0000005d;
+    display: none;
+}
+.input-verification .content {
+    position: relative;
+    background-color: var(--font-color);
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 5px;
+    margin: 200px auto;
+    color: var(--main-color);
+}
+.input-verification .content h3 {
+    color: orangered;
+    margin: 10px 0;
+    text-align: center;
+}
+.input-verification .content .close-error {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* total section */
+.total .container {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.total .container button {
+    padding: 2px 10px;
+    background-color: var(--dark-color);
+}
+.total .container button:hover {
+    background-color: #20282e;
+}
+
+/* excel sheet */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.exportExcelBtn {
+    margin: 20px auto;
+    background-color: var(--dark-color);
+    width: 50%;
+    padding: 3px 10px;
+}
+.exportExcelBtn:hover {
+    background-color: #20282e;
+}
+
+/* responsive */
+@media (max-width: 500px) {
+    section .container .top form p input[type='date'] {
+        width: 60%;
+    }
+    
+}
+@media (max-width: 420px) {
+    .input-verification .content {
+        margin: 200px 10px;
+    }
+}
