@@ -10,3 +10,5 @@ This application helps users monitor their daily financial activity, maintain be
 - Delete all transactions at once
 - Export data to Excel file
 - Input validation with user feedback
+## Demo
+[live-demo](https://mostafa-eskander.github.io/Money-management/)
