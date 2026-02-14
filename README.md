@@ -12,6 +12,16 @@ This application helps users monitor their daily financial activity, maintain be
 - Export data to Excel file
 - Input validation with user feedback
 
+### Project Goal
+
+This project was built to practice and demonstrate core web development concepts such as:
+
+- DOM manipulation
+- CRUD operations (Create, Read, Update, Delete)
+- Data management
+- User interface interaction
+- Building practical and real-world web applications
+
 ## Demo
 [live-demo](https://mostafa-eskander.github.io/Money-management/)
 
